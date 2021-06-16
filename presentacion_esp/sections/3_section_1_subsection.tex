@@ -1,0 +1,294 @@
+\subsection{Construcción}
+
+\setwatermark{\fontsize{10pt}{10pt}\selectfont{ }}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{img/inter.eps}}%
+\begin{frame}
+
+\end{frame}
+}
+
+\setwatermark{\fontsize{30pt}{30pt}\selectfont{ }}
+\begin{frame}{Modelo Probit}
+\framesubtitle{aumentado de variables latentes}
+
+\begin{columns}
+\column{.5\textwidth}
+
+\vspace*{.5 cm}
+\hspace*{.2cm}
+\hbox{%
+\Huge
+ \transparent{0.5}%
+\textcolor{applegreen}{Decisiones}
+ }
+
+\vspace*{1.0 cm}
+\hspace*{.2cm}
+ \hbox{%
+\Large
+ % \transparent{0.9}%
+\textcolor{beaublue}{Maximización de la}
+ }
+
+\vspace*{.3 cm}
+\hspace*{.5cm}
+ \hbox{%
+\Huge
+ % \transparent{0.9}%
+\textcolor{beaublue}{utilidad}
+ }
+
+\column{.5\textwidth}
+
+\[ y_{i} = \begin{cases*}
+  1 & si se elige A \\
+  0 & si se elige B\\ \end{cases*}. \]
+
+
+\[
+\begin{split}
+\mathbb{P} (y_{i}=1) &= \mathbb{P} (U_{i,A} >U_{i,B}) \\
+&=  \mathbb{P} (U_{i,A} - U_{i,B} > 0) \\
+&=  \mathbb{P} (z_i > 0).
+\end{split}
+\]
+
+  
+\end{columns}
+
+\vspace*{1 cm}
+\hspace*{.6cm}
+\hbox{%
+\fontsize{20}{20}\selectfont
+ \transparent{0.6}%
+\textcolor{darkpastelpurple}{Probit de variables latentes}
+ }
+
+ \[ z_i = x_i\beta + \varepsilon_i \qquad  \varepsilon_i \sim N(0,1) \]
+
+\end{frame}
+
+% ---------------------- PROBIT -------------------------------------
+\setwatermark{\fontsize{90pt}{90pt}\selectfont{\textcolor{indigo(web)}{Probit}}}
+\begin{frame}{Modelo Probit}
+\framesubtitle{Componentes}
+
+\[ z_i = x_i\beta + \varepsilon_i \qquad  \varepsilon_i \sim N(0,1) \]
+
+\textcolor{black}{
+donde:\\
+$z_i$ = Preferencia latente del individuo $i$.\\
+$x_i$ = vector de covariables.\\
+$\beta$ = vector de coeficientes asociados a $x_i$.\\
+$\varepsilon_i$ = coeficiente de error}
+
+% $z_i$ = Preferencia latente del individuo $i$ de elegir A sobre B.\\
+% $z_i$ = vector de covariables que captura las cualidades del individuo $i$ así como la captura de la diferencia entre las cualidades de las alternativas.\\
+% $\beta$ = vector de coeficientes asociados a $x_i$.\\
+% $\varepsilon_i$ = término de error que refleja los factores no observados.}
+
+\end{frame}
+
+% --------------------- PROBLEMATICA --------------------------------------
+\setwatermark{\fontsize{40pt}{40pt}\selectfont{ }}
+\begin{frame}{Modelo Probit}
+\framesubtitle{Problemática}
+
+Al tener a $\varepsilon_i$ \alert{independiente} a través de los individuos, se refleja la \alert{ausencia de posibles efectos de dependencia} entre las preferencias de los individuos.
+
+\vspace*{1.0 cm}
+ \hbox{%
+\fontsize{40}{48}\selectfont
+ \transparent{0.3}%
+\textcolor{mint}{James LeSage\textsubscript{\cite{lesage2000}}}
+ }\vbox{%
+ \fontsize{8}{8}\selectfont
+ \transparent{0.3}%
+\textcolor{mint}{\cite{lesage2000}}}
+
+consideró introducir una matriz de covarianzas de $\varepsilon$ a través de los individuos, mediante un parámetro \alert{autorregresivo} $\theta$,
+
+\[ \theta = \rho W\theta + u \qquad  u \sim N(0,\sigma_{u}^2 I_m). \]
+
+\end{frame}
+
+% ------------------------ THETHA 1 ------------------------------------
+\subsubsection{Parámetro autoregresivo $\theta$}
+\setwatermark{\fontsize{40pt}{40pt}\selectfont{ }}
+\begin{frame}{Modelo InterProbit}
+\framesubtitle{Efecto regional}
+
+\begin{variableblock}{$\theta$: parámetro autoregresivo}{bg=white,fg=normal}{bg=fondo,fg=destacado}
+  Representa todas las \textcolor{mediumslateblue}{dependencias no observadas} entre los individuos. 
+\end{variableblock}
+
+\vspace*{.5 cm}
+ \hbox{%
+\fontsize{20}{20}\selectfont
+ \transparent{0.6}%
+\textcolor{iris}{Es autorregresivo}
+ }
+
+porque describe las variaciones que exhiben las preferencias latentes medidas en diferentes lugares.
+
+\vspace*{.5 cm}
+ \hbox{%
+\fontsize{20}{20}\selectfont
+ \transparent{0.3}%
+\textcolor{mediumslateblue}{Entonces ...}
+ }
+los aspectos de estas dependencias pueden ser parecidas o inclusive iguales a las de individuos cercanos.
+\end{frame}
+% ------------------------ THETA 2------------------------------------
+
+\setwatermark{\fontsize{50pt}{50pt}\selectfont{\textcolor{frenchblue}{dependencia}}}
+\begin{frame}{Modelo InterProbit}
+\framesubtitle{Efecto regional}
+
+\begin{variableblock}{$\theta$: parámetro autoregresivo}{bg=white,fg=normal}{bg=beaublue,fg=black}
+
+\begin{align}
+& \theta = \rho W\theta + u \qquad  u \sim N(0,\sigma_{u}^2I_m ) \nonumber \\ 
+& \theta = \left(I_m -\rho W \right)^{-1}u \nonumber
+\end{align}
+
+donde:\\
+$\rho$: grado de dependencia entre los individuos \\
+$W$ : matriz de pesos $(m \times m)$\\
+$u$ : vector de errores iid de tamaño $(m \times 1)$\\
+$\sigma^2_u$ : incertidumbre de la estructura espacial
+\end{variableblock}
+
+\end{frame}
+% ------------------------ INTERPROBIT ------------------------------------
+\setwatermark{\fontsize{50pt}{50pt}\selectfont{ }}
+\begin{frame}{Modelo InterProbit}
+% \framesubtitle{Efecto regional}
+
+\begin{variableblock}{Modelo Probit de preferencias espaciales y demográficas}{bg=white,fg=normal}{bg=probit_claro,fg=black}
+
+\begin{align}
+& Z = X\beta +\varepsilon + \theta,  \nonumber \\
+& \theta = \rho W \theta + u,  \nonumber \\
+& \varepsilon \sim N(0,I_m), \nonumber \\
+& u \sim N(0,\sigma^{2}I_m). \nonumber
+\end{align}
+\end{variableblock}
+
+Al haber aumentado un término de error, $\theta$,  que determine que las covarianzas sean distintas de cero en las preferencias latentes, y que además no se encuentre en la verosimilitud, se toman en cuenta los efectos de las covarianzas distintas de cero  y se simplifica la evaluación de la función de verosimilitud
+
+\[
+Z \sim N \left(X\beta, I_m + \sigma^2 \left[\left(I_m-\rho W\right) \left(I_m-\rho W\right)' \right]^{-1} \right). \]
+
+
+\end{frame}
+
+% ---------------------------- RHO 1---------------------------
+\setwatermark{\fontsize{90pt}{90pt}\selectfont{\textcolor{frenchblue}{Probit}}}
+\begin{frame}[t]{Modelo InterProbit}
+\framesubtitle{Componentes de $\theta$: $\rho$}
+
+% \begin{variableblock}{$\rho$}{bg=white,fg=normal}{bg=mint_claro,fg=black}
+\begin{columns}
+\column{.5\textwidth}
+
+\vspace*{.5 cm}
+\begin{figure}[h]
+\includegraphics[scale = .25]{./img/rho.png}
+\end{figure}
+
+\column{.5\textwidth}
+
+\vspace*{.5 cm}
+\textcolor{black}{
+Es la fuerza de dependencia espacial y demográfica entre los individuos.}\\
+\end{columns}
+\vspace*{.4 cm}
+% \end{variableblock}
+
+\begin{itemize}
+\item \textcolor{black}{Dada $W$, $\rho$ representa el impacto de primer orden.}
+\item \textcolor{black}{$\frac{1}{\lambda_{\min}} < \rho < \frac{1}{\lambda_{\max}}.$}
+\item \textcolor{black}{Si $\rho > 0 $ entonces existe una dependencia positiva entre los individuos.}
+\end{itemize}
+
+\end{frame}
+
+% ----------------------------- MATRIZ W 2 -----------------------------
+\setwatermark{\fontsize{90pt}{90pt}\selectfont{\textcolor{mint}{Inter}}}
+\begin{frame}{Modelo InterProbit}
+\framesubtitle{Componentes de $\theta$: $W$}
+
+\begin{figure}[H]\def\b{\color{mint}}
+\centering
+\begin{minipage}[b]{.45\textwidth}
+\begin{tikzpicture}[mystyle/.style={draw,shape=circle,fill=mint_claro, inner sep=0pt, minimum size=4pt, label={[anchor=center, label distance=2mm](90+360/\ngon*(####1-1)):####1}}]
+\def\ngon{5}
+\node[draw, regular polygon,regular polygon sides=\ngon,minimum size=3cm] (p) {};
+\foreach\x in {1,...,\ngon}{
+    \node[mystyle=\x] (p\x) at (p.corner \x){};
+}
+\end{tikzpicture}
+\caption{Gráfico de conexión circular del modelo.}\label{first}
+\end{minipage}\hfill
+\begin{minipage}[b]{.45\textwidth}
+%\begin{figure}
+\centering
+\small
+\label{M}
+\(
+W= 
+\begin{pmatrix}
+0 & \b\text{.5} & 0 & 0 & \b\text{.5} \\
+\b\text{.5} & 0 & \b\text{.5} & 0 & 0 \\
+0 & \b\text{.5} & 0 & \b\text{.5} & 0 \\
+0 & 0 & \b\text{.5} & 0 & \b\text{.5} \\
+\b\text{.5} & 0 & 0 & \b\text{.5} & 0 \\
+\end{pmatrix}
+\)
+\caption{Estructura de la matriz $W$ (normalizada) de 5 individuos.}\label{second}
+%\end{figure}
+\end{minipage}
+\end{figure}
+
+\end{frame}
+
+% ----------------------- MATRIZ W 1 -------------------------------------
+\setwatermark{\fontsize{60pt}{60pt}\selectfont{ }}
+\begin{frame}{Modelo InterProbit}
+\framesubtitle{Componentes de $\theta$: $W$}
+
+\begin{variableblock}{$W$: matriz de pesos espaciales y demográficos}{bg=white,fg=normal}{bg=mint_claro,fg=black}
+
+Sea $W_{\left(n \times n\right)}$ una matriz, se dice que $W_{\left(n \times n\right)}$ es la \textit{matriz de pesos} si el elemento $w_{i,j}$, $i,j = 1,\dots,n$, de la matriz describe la cercanía entre el elemento $i$ con el $j$ en términos de una medida de distancia, esto es:
+
+\[
+w_{i,j} = 
+  \begin{cases*}
+  1 & \text{el elemento $i$ es vecino contiguo de $j$} \\
+  0 & \text{el elemento $i$ no es vecino contiguo de $j$} \\
+  \end{cases*}.
+\]
+
+Los elementos que se ven como vecinos de un elemento dado interactúan con ese elemento de una manera significativa.
+Como al elemento $i$ no se le considera como su propio vecino entonces $w_{i,i} = 0$.
+\end{variableblock}
+
+\end{frame}
+
+% ----------------------- MATRIZ W 3 -------------------------------------
+\setwatermark{\fontsize{60pt}{60pt}\selectfont{ }}
+\begin{frame}{Modelo InterProbit}
+\framesubtitle{Componentes de $\theta$: $W$ con múltiples covariables}
+
+Yang y Allenby\cite{yang2003_interdependent} especifican un matriz autorregresiva $W$ como una mezcla finita de matrices de coeficientes, cada una relacionada con una covariable específica:
+
+\begin{gather}
+  W = \sum_{k=1}^{K} \phi_k W_k \\
+  \sum_{k=1}^{K} \phi_k = 1,
+\end{gather}
+
+\end{frame}
+

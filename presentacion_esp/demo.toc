@@ -1,0 +1,32 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\babel@toc {spanish}{}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {1}{Introducción}{3}{0}{1}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {2}{Objetivo}{3}{0}{2}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {3}{Modelo InterProbit}{4}{0}{3}
+\defcounter {refsection}{0}\relax 
+\beamer@subsectionintoc {3}{1}{Construcción}{4}{0}{3}
+\defcounter {refsection}{0}\relax 
+\beamer@subsubsectionintoc {3}{1}{1}{Parámetro autoregresivo $\theta $}{8}{0}{3}
+\defcounter {refsection}{0}\relax 
+\beamer@subsectionintoc {3}{2}{Inferencia Bayesiana}{15}{0}{3}
+\defcounter {refsection}{0}\relax 
+\beamer@subsubsectionintoc {3}{2}{1}{Distribuciones iniciales y finales del modelo}{17}{0}{3}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {4}{Implementaciones}{19}{0}{4}
+\defcounter {refsection}{0}\relax 
+\beamer@subsectionintoc {4}{1}{A datos generados}{19}{0}{4}
+\defcounter {refsection}{0}\relax 
+\beamer@subsubsectionintoc {4}{1}{1}{Especificaciones}{19}{0}{4}
+\defcounter {refsection}{0}\relax 
+\beamer@subsubsectionintoc {4}{1}{2}{Estimaciones}{19}{0}{4}
+\defcounter {refsection}{0}\relax 
+\beamer@subsectionintoc {4}{2}{A datos reales}{19}{0}{4}
+\defcounter {refsection}{0}\relax 
+\beamer@subsubsectionintoc {4}{2}{1}{Análisis de los datos}{19}{0}{4}
+\defcounter {refsection}{0}\relax 
+\beamer@subsubsectionintoc {4}{2}{2}{Estimaciones}{19}{0}{4}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {5}{Conclusiones}{19}{0}{5}

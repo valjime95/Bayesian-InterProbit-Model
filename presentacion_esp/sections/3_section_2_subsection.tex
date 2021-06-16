@@ -1,0 +1,55 @@
+\setwatermark{\fontsize{10pt}{10pt}\selectfont{ }}
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{img/bayesiana.eps}}%
+\begin{frame}
+
+\end{frame}
+}
+% ------------------------ E BAYESIANA ----------------------------------
+\setwatermark{\fontsize{90pt}{90pt}\selectfont{Bayes}}
+\begin{frame}{Modelo InterProbit}
+\framesubtitle{Teorema de Bayes}
+
+\end{frame}
+
+% --------------------- DIST INICIALES -----------------------------------
+\subsubsection{Distribuciones iniciales y finales del modelo}
+\setwatermark{\fontsize{70pt}{70pt}\selectfont{priors}}
+
+
+\begin{frame}[t]{Modelo InterProbit}
+\framesubtitle{Distribuciones iniciales}
+
+\hspace*{2 cm}
+
+\textcolor{black}{
+\begin{align*}
+\beta &\sim N\left( \bar{\beta},T^{-1} \right) \quad \text{con } T = XX'\\
+\sigma^2 &\sim IG\left( \frac{\nu_0}{2}, \frac{\nu_0 s_0^2}{2} \right), \\[3pt]
+\rho &\sim U \left( \frac{1}{\lambda_{\min}}, \frac{1}{\lambda_{\max}} \right), \\[5pt]
+\theta &\sim N \left(0, \sigma^2\left[BB' \right]^{-1} \right), \quad \text{con } B = \left(I_{m} -\rho W \right) \\[5pt]
+Z &\sim N \left(X\beta, I_m + \sigma^2 \left[BB' \right]^{-1} \right).
+\end{align*}
+}
+
+\end{frame}
+
+% --------------------- DIST FINALES -----------------------------------
+\setwatermark{\fontsize{70pt}{70pt}\selectfont{posteriors}}
+
+\begin{frame}[t]{Modelo InterProbit}
+\framesubtitle{Distribuciones finales}
+
+\hspace*{2 cm}
+
+\textcolor{black}{
+\begin{align*}
+\beta &\sim N\left( \bar{\beta},T^{-1} \right) \quad \text{con } T = XX'\\
+\sigma^2 &\sim IG\left( \frac{\nu_0}{2}, \frac{\nu_0 s_0^2}{2} \right), \\[3pt]
+\rho &\sim U \left( \frac{1}{\lambda_{\min}}, \frac{1}{\lambda_{\max}} \right), \\[5pt]
+\theta &\sim N \left(0, \sigma^2\left[BB' \right]^{-1} \right), \quad \text{con } B = \left(I_{m} -\rho W \right) \\[5pt]
+Z &\sim N \left(X\beta, I_m + \sigma^2 \left[BB' \right]^{-1} \right).
+\end{align*}
+}
+
+\end{frame}

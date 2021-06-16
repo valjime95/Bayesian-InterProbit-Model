@@ -1,0 +1,191 @@
+\documentclass{beamer}
+
+
+\usetheme{simple}
+
+\usepackage{lmodern}
+\renewcommand*\familydefault{\ttdefault}
+\usepackage[scale=2]{ccicons}
+\usepackage[spanish,es-tabla]{babel}
+
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{eucal}
+\usepackage{mathtools}  % for paired delimiters ()
+\usepackage{mathrsfs}   % for script capitals
+% TODO: 
+%   position adjustement
+%   change colours
+%---------------------------------------
+%bibliografía / referencias
+%---------------------------------------
+\usepackage{biblatex}
+\bibliography{../Latex/referencias.bib}
+\addbibresource{../Latex/referencias.bib} %Imports bibliography file
+%---------------------------------------
+\usepackage{fixltx2e}
+
+
+% Watermark background (simple theme)
+% numerar ecuaciones con align*
+%---------------------------------------
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+%---------------------------------------
+
+% plots and graphs in R
+%---------------------------------------
+\usepackage{tikz} 
+\usetikzlibrary{shapes.geometric}
+%---------------------------------------
+
+% graph to the right side
+%---------------------------------------
+\usepackage{caption}
+\usepackage{subcaption}
+%---------------------------------------
+\usepackage{graphicx}
+\usepackage{transparent}
+\usepackage{xcolor}
+
+\definecolor{applegreen}{rgb}{0.55, 0.71, 0.0}
+\definecolor{babyblueeyes}{rgb}{0.63, 0.79, 0.95} %USAR
+\definecolor{beaublue}{rgb}{0.74, 0.83, 0.9}
+\definecolor{darkpastelpurple}{rgb}{0.59, 0.44, 0.84}
+\definecolor{mint}{rgb}{0.24, 0.71, 0.54}
+\definecolor{mint_claro}{RGB}{206, 231, 219}
+% \definecolor{eaglegreen}{rgb}{0.0, 0.29, 0.33} %USAR
+\definecolor{mediumelectricblue}{rgb}{0.01, 0.31, 0.59}
+\definecolor{mediumslateblue}{rgb}{0.48, 0.41, 0.93}
+\definecolor{indigo(web)}{rgb}{0.29, 0.0, 0.51}
+\definecolor{iris}{rgb}{0.35, 0.31, 0.81}
+\definecolor{frenchblue}{rgb}{0.0, 0.45, 0.73}
+\definecolor{probit_claro}{RGB}{240, 236, 246}
+\definecolor{cadetblue}{rgb}{0.37, 0.62, 0.63} % USAR
+% \definecolor{celadon}{rgb}{0.67, 0.88, 0.69} % USAR
+% \definecolor{lavenderblue}{rgb}{0.8, 0.8, 1.0} % USAR
+
+
+
+\setwatermark{\includegraphics{img/maps_fondo.png}}
+
+\title[Modelo InterProbit]{Modelo Probit de Dependencias Espaciales y Demográficas}
+\date{Facultad de Ciencias, UNAM\\
+2021}
+\author[VJV]{Valeria Jimeno Villegas}
+\institute[UNAM]{Asesora: Dra. Ruth Selene Fuentes García} 
+
+
+\begin{document}
+
+\maketitle
+\begin{frame}{Índice}
+\tableofcontents
+\end{frame}
+
+\section{Introducción}
+% \input{sections/1_section_intro}
+\section{Objetivo}
+\input{sections/2_section_objetivo}
+\section{Modelo InterProbit}
+\input{sections/3_section_1_subsection}
+\subsection{Inferencia Bayesiana}
+\input{sections/3_section_2_subsection}
+
+
+\section{Implementaciones}
+\subsection{A datos generados}
+\subsubsection{Especificaciones}
+\subsubsection{Estimaciones}
+\subsection{A datos reales}
+\subsubsection{Análisis de los datos}
+\subsubsection{Estimaciones}
+
+\section{Conclusiones}
+
+
+% \begin{frame}{simple}
+%   \framesubtitle{A beamer theme}
+
+%   \texttt{simple} is a minimalist Beamer theme that features
+
+%   \begin{columns}
+%     \column{.5\textwidth}
+%       \begin{itemize}
+%         \item a \alert{watermark} logo in the background
+%         \item slide \alert{numbers}
+%         \item \emph{emph}asized and \alert{alert}ed text
+%       \end{itemize}
+
+%     \column{.5\textwidth}
+%       \begin{block}{And of course...}
+%          blocks, columns, and all Beamer power
+%       \end{block}
+%   \end{columns}
+  
+% \end{frame}
+
+% \setwatermark{\fontsize{90pt}{90pt}\selectfont{Inter}}
+
+% \begin{frame}[fragile]{watermark}
+%   \framesubtitle{not only for images}
+
+%   \begin{itemize}
+%     \item You can place \emph{any} \LaTeX{} \alert{contents} as a watermark
+%   \end{itemize}
+
+%   \begin{block}{In preamble}
+%     \begin{verbatim}
+%      \setwatermark{\includegraphics[height=8cm]{%
+%                    img/Heckert_GNU_white.png}}
+%     \end{verbatim}
+%   \end{block}
+
+%   \begin{block}{Just before this frame}
+%     \begin{verbatim}
+%      \setwatermark{\fontsize{125pt}{125pt}%
+%                    \selectfont{Simple}}
+%     \end{verbatim}
+%   \end{block}
+
+
+% \end{frame}
+
+% \setwatermark{\fontsize{90pt}{90pt}\selectfont{Probit}}
+
+
+% \begin{frame}{Options}
+%   \framesubtitle{Fine adjustement of the watermark position}
+%   \begin{itemize}
+%     \item \texttt{hoffset}
+%     \item \texttt{voffset}
+%   \end{itemize}
+  
+%   They admit any \emph{positive} or \emph{negative} spacing \alert{unit}
+  
+%   Note that some \alert{warnings} about \emph{badboxes} might be generated at compilation
+
+% \end{frame}
+
+
+% \begin{frame}{License}
+
+%   \begin{block}{Get the source of this theme and the demo presentation from}
+
+%   \begin{center}\url{http://github.com/famuvie/beamerthemesimple}\end{center}
+
+%   \end{block}
+  
+%   The theme \emph{itself} is licensed under a
+%   \href{http://creativecommons.org/licenses/by-sa/4.0/}{Creative Commons
+%   Attribution-ShareAlike 4.0 International License}.
+
+%   \begin{center}\ccbysa\end{center}
+
+% \end{frame}
+
+
+\begin{frame}
+\printbibliography
+\end{frame}
+
+\end{document}
